@@ -1,0 +1,23 @@
+{% extends "lookup/base.html" %}
+
+{% block title %} Look Up Informat{% endblock %}
+{% block head %}Look Up Informat{% endblock %}
+
+{% block content %}
+<table>
+<tr>
+<td><a href='/create_group/'> Create Search Group</a></td>
+</tr>
+</table>
+
+{% if groups %}
+    <ul>
+    {% for group in groups %}
+        <li><a href="/show_groups/{{ group.id }}/">{{ group.group_name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Group Lists Found</p>
+{% endif %}
+
+{% endblock %}

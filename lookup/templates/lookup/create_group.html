@@ -1,0 +1,48 @@
+{% extends "lookup/base.html" %}
+
+{% block title %} Look Up Informat{% endblock %}
+{% block head %}Look Up Informat{% endblock %}
+
+{% block content %}
+echo test
+<table>
+<tr>
+<td><a href='/create_group/'> Create Search Group</a></td>
+</tr>
+</table>
+
+<br/>
+<br/>
+<form action="/create_group/" method="post">
+
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    <div class="fieldWrapper">
+        {{ form.group_name.errors }}
+        <label for="group_name">Group Name:</label>
+        {{ form.group_name }}
+    </div>
+<table>
+<tr>
+  <th>Names</th>
+  <th>Addresses</th>
+</tr>
+<tr>
+<td>
+    <div class="fieldWrapper">
+        {{ form.names.errors }}
+        {{ form.names }}
+    </div>
+</td>
+<td>
+    <div class="fieldWrapper">
+        {{ form.addresses.errors }}
+        {{ form.addresses }}
+    </div>
+</td>
+</tr>
+</table>
+    <p><input type="submit" value="Send message" /></p>
+</form>
+
+{% endblock %}

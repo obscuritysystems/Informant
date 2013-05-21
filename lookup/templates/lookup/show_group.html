@@ -1,0 +1,20 @@
+{% extends "lookup/base.html" %}
+
+{% block title %} Look Up Informat{% endblock %}
+{% block head %}Look Up Informat{% endblock %}
+
+{% block content %}
+<h3>Show Group</h3>
+
+{% if entries %}
+    <ul>
+    {% for entry in entries %}
+        <li>{{entry.name}} {{entry.address}}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Group Lists Found</p>
+{% endif %}
+
+
+{% endblock %}
