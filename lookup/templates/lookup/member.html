@@ -13,7 +13,7 @@
 {% if groups %}
     <ul>
     {% for group in groups %}
-        <li><a href="/show_groups/{{ group.id }}/">{{ group.group_name }}</a></li>
+        <li><a href="/show_group/{{ group.id }}">{{ group.group_name }}</a></li>
     {% endfor %}
     </ul>
 {% else %}

@@ -42,10 +42,14 @@ class LoginForm(forms.Form):
   )
  
 class CreateGroupForm(forms.Form):
-    group_name  = forms.CharField(widget=forms.TextInput(attrs={'size':'40'}))
+    group_name = forms.CharField(widget=forms.TextInput(attrs={'size':'40'}))
     names       = forms.CharField(label='Names',
                                     widget=forms.Textarea(attrs={'rows':50,'cols':50})
                                   )
     addresses   = forms.CharField(label='Addressses',
                                   widget=forms.Textarea(attrs={'rows':50,'cols':50})
                                 )
+
+class SearchAttemptForm(forms.Form):
+    search_name = forms.CharField(widget=forms.TextInput(attrs={'size':'40'}))
+    group_id = forms.IntegerField(widget=forms.HiddenInput()) 

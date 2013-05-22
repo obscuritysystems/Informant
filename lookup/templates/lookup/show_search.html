@@ -1,0 +1,33 @@
+{% extends "lookup/base.html" %}
+
+{% block title %} Look Up Informat{% endblock %}
+{% block head %}Look Up Informat{% endblock %}
+
+{% block content %}
+<h3>Show Group</h3>
+
+<p>
+    <table>
+    <tr>
+        <th><h4>Entries</h4></th>
+    </tr>
+    <tr>
+        <th>Names</th>
+        <th>Phone Numbers</th>
+    </tr>
+{% if search_results %}
+
+    {% for result in search_results %}
+       <tr>
+            <td>{{result.first_name}}</td>
+            <td>{{result.phone}}</td>
+       </tr>
+    {% endfor %}
+    </table>
+</p>
+{% else %}
+    <p>No Group Lists Found</p>
+{% endif %}
+
+
+{% endblock %}

@@ -6,12 +6,38 @@
 {% block content %}
 <h3>Show Group</h3>
 
-{% if entries %}
+<h4>Searches</h4>
+<form action="/run_search/" method="post">
+ {% csrf_token %}
+{{ form.as_p }}
+<p><input type="submit" value="Search" /></p>
+</form>
+{% if searches %}
     <ul>
-    {% for entry in entries %}
-        <li>{{entry.name}} {{entry.address}}</li>
+   {% for search in searches %}
+        <li><a href="/show_search/{{search.id}}">{{search.search_name}}</a></li>
     {% endfor %}
     </ul>
+
+{% else %}
+    <p>No Search Yet</p>
+{% endif %}
+
+{% if entries %}
+<p>
+    <table>
+    <tr>
+        <th><h4>Entries</h4></th>
+    </tr>
+    <tr>
+        <th>Names</th>
+        <th>Addresses</th>
+    </tr>
+    {% for entry in entries %}
+       <tr><td>{{entry.first_name}}</td><td>{{entry.address}}</td></tr>
+    {% endfor %}
+    </table>
+</p>
 {% else %}
     <p>No Group Lists Found</p>
 {% endif %}
