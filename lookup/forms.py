@@ -49,6 +49,11 @@ class CreateGroupForm(forms.Form):
     addresses   = forms.CharField(label='Addressses',
                                   widget=forms.Textarea(attrs={'rows':50,'cols':50})
                                 )
+    zipcodes   = forms.CharField(label='Zipcodes',
+                                  widget=forms.Textarea(attrs={'rows':50,'cols':15})
+                                )
+
+
 
 class SearchAttemptForm(forms.Form):
     search_name = forms.CharField(widget=forms.TextInput(attrs={'size':'40'}))

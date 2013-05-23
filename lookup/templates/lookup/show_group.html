@@ -12,6 +12,8 @@
 {{ form.as_p }}
 <p><input type="submit" value="Search" /></p>
 </form>
+<p>
+<h3>Search Entries</h3>
 {% if searches %}
     <ul>
    {% for search in searches %}
@@ -20,8 +22,9 @@
     </ul>
 
 {% else %}
-    <p>No Search Yet</p>
+    <p>No Searches Yet</p>
 {% endif %}
+</p>
 
 {% if entries %}
 <p>
@@ -32,9 +35,10 @@
     <tr>
         <th>Names</th>
         <th>Addresses</th>
+        <th>Zip Code</th>
     </tr>
     {% for entry in entries %}
-       <tr><td>{{entry.first_name}}</td><td>{{entry.address}}</td></tr>
+       <tr><td>{{entry.last_name}}</td><td>{{entry.address}}</td><td>{{entry.zipcode}}</td></tr>
     {% endfor %}
     </table>
 </p>

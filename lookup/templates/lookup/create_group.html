@@ -25,6 +25,7 @@
 <tr>
   <th>Names</th>
   <th>Addresses</th>
+  <th>Zip</th>
 </tr>
 <tr>
 <td>
@@ -39,6 +40,14 @@
         {{ form.addresses }}
     </div>
 </td>
+<td>
+    <div class="fieldWrapper">
+        {{ form.zipcodes.errors }}
+        {{ form.zipcodes }}
+    </div>
+</td>
+
+
 </tr>
 </table>
     <p><input type="submit" value="Send message" /></p>

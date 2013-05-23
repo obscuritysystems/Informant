@@ -14,13 +14,19 @@
     <tr>
         <th>Names</th>
         <th>Phone Numbers</th>
+        <th>Address</th>
+        <th>Zip Code</th>
+        <th>Search Url</th>
     </tr>
 {% if search_results %}
 
     {% for result in search_results %}
-       <tr>
-            <td>{{result.first_name}}</td>
-            <td>{{result.phone}}</td>
+       <tr> 
+            <td>{{ result.0 }},</td>
+            <td>{{ result.1 }},</td>
+            <td>{{ result.2 }},</td>
+            <td>{{ result.3 }},</td>
+            <td><a href="{{ result.4 }}">{{ result.4}}</a></td>
        </tr>
     {% endfor %}
     </table>

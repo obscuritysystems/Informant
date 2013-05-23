@@ -16,11 +16,14 @@ class PersonEntry(models.Model):
     first_name      = models.CharField(max_length=254)
     last_name       = models.CharField(max_length=254)
     address         = models.CharField(max_length=254)
+    zipcode         = models.CharField(max_length=10)
     search_group    = models.ForeignKey(SearchGroup)
     
 class PersonResult(models.Model):
     first_name      = models.CharField(max_length=254)
     last_name       = models.CharField(max_length=254)
     phone           = models.CharField(max_length=254)
+    search_url      = models.CharField(max_length=254)
+    person_entry    = models.ForeignKey(PersonEntry)
     search_group    = models.ForeignKey(SearchGroup)
     search_attempt  = models.ForeignKey(SearchAttempt)
